@@ -13,5 +13,8 @@
         "targets": {}
       }
     }
+  },
+  "cli": {
+    "analytics": "3b78c551-877f-4c3e-aaf9-d74a0a73b172"
   }
 }
