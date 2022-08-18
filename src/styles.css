@@ -4,6 +4,6 @@
 body {
   margin: 0;
   padding-top: 65px;
-  min-width: 320px;
-  min-height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
 }
