@@ -3,7 +3,6 @@ import { NavbarComponent } from './common/navbar/navbar.component';
 
 import { RouterModule } from '@angular/router';
 import { Route } from './app-routing-decorator.module';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { HomeComponent } from './page/home.component';
 
 @Component({
@@ -26,11 +25,6 @@ import { HomeComponent } from './page/home.component';
 })
 @Route({
   path: 'features',
-  providers: [
-    importProvidersFrom(
-      BsDatepickerModule.forRoot(),
-    ),
-  ],
   loadComponent: () => import('./page/feature.component').then(
     m => m.FeatureComponent
   ),
