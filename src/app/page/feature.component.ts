@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 import { Route } from '../app-routing-decorator.module';
 
 @Component({
   selector: 'app-feature',
   standalone: true,
   imports: [
+    FormsModule,
     BsDatepickerModule,
+    TimepickerModule,
   ],
   template: `
     <div class="row">
@@ -23,12 +27,20 @@ import { Route } from '../app-routing-decorator.module';
               bsDaterangepicker>
       </div>
     </div>
+    <div class="row">
+      <div class="col-12">
+        <timepicker [(ngModel)]="mytime"></timepicker>
+        <pre class="alert alert-info">Time is: {{mytime}}</pre>
+      </div>
+    </div>
   `,
   styles: [
   ]
 })
 @Route({path: 'features'})
 export class FeatureComponent implements OnInit {
+
+  mytime: Date = new Date();
 
   constructor() { }
 

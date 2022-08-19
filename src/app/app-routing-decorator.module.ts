@@ -15,8 +15,12 @@
  import { Component, NgModule, Type } from '@angular/core';
  import { RouterModule, Router, Route as R } from '@angular/router';
 
+ interface ExtendedRouter extends R {
+  lc?: string;
+ }
+
  interface IRouteWithComponent {
-   route: R;
+   route: ExtendedRouter;
    targetClass: any;
  }
 

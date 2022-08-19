@@ -4,6 +4,7 @@ import { NavbarComponent } from './common/navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { Route } from './app-routing-decorator.module';
 import { HomeComponent } from './page/home.component';
+import { AboutComponent } from './page/about.component';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ import { HomeComponent } from './page/home.component';
     RouterModule,
     NavbarComponent,
     HomeComponent,
+    AboutComponent,
   ],
   template: `
     <app-navbar></app-navbar>
@@ -27,6 +29,12 @@ import { HomeComponent } from './page/home.component';
   path: 'features',
   loadComponent: () => import('./page/feature.component').then(
     m => m.FeatureComponent
+  ),
+})
+@Route({
+  path: 'users',
+  loadComponent: () => import('./page/users.component').then(
+    m => m.UsersComponent
   ),
 })
 export class AppComponent {}
